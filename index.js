@@ -179,7 +179,14 @@ class Airplane {
      this.favSubjects=object.favSubjects;
     }
     listSubjects(){
-      return `Loving ${this.favSubjects}`;
+      return `Loving ${this.favSubjects[0]},${this.favSubjects[1]},${this.favSubjects[2]}!`;
+
+    }
+    PRAssignment(subject){
+      return `${this.name} has submitted a PR for ${subject}`;
+    }
+    sprintChallenge(subject){
+      return `${this.name} has begun sprint challenge on ${subject}`;
     }
  }
   
@@ -197,7 +204,17 @@ class Airplane {
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
  class ProjectManager extends Instructor{
-     constructor
+     constructor(object){
+       super(object);
+       this.gradClassName=object.gradClassName;
+       this.favInstructor=object.favInstructor;
+     }
+     standUp(slackChannel){
+       return `${this.name} announces to ${slackChannel}, @channel standy times!`
+     }
+     debugsCode(studentObject,subject){
+       return `${this.name} debugs ${studentObject.name}'s code on ${subject}`
+     }
  }
   /*
     STRETCH PROBLEM (no tests!)
